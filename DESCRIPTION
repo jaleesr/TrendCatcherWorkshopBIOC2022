@@ -21,8 +21,6 @@ Depends:
         biomaRt, 
         ComplexHeatmap,
         jaleesr/TrendCatcher
-        
-
 Suggests: 
     knitr,
     rmarkdown,
