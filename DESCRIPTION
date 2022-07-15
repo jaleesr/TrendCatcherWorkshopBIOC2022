@@ -36,7 +36,7 @@ Depends:
     doSNOW (>= 1.0.20),
     reshape2 (>= 1.4.4),
     pracma (>= 2.3.8),
-    jaleesr/TrendCatcher
+
 Suggests: 
     knitr,
     rmarkdown,
