@@ -1,28 +1,32 @@
-Package: BuildABiocWorkshop
-Title: Bioconductor or R Workshop Template and Github Actions
-Version: 2.0.0
+Package: TrendCatcher
+Title: TrendCatcher Workshop BIOC2022
+Version: 1.0.0
 Authors@R: 
-    person(given = "Sean",
-           family = "Davis",
+    person(given = "Xinge",
+           family = "Wang",
            role = c("aut", "cre"),
-           email = "seandavi@gmail.com",
-           comment = c(ORCID = "0000-0002-8991-6458"))
-Description: This package serves as a template for using github actions to 
-    prepare a Bioconductor Workshop package for use. In particular,
-    a pkgdown website and docker image are generated based on workflow 
-    settings. 
-License: MIT + file LICENSE
+           email = "xwang234@uic.edu",
+           comment = c(ORCID = "0000-0003-0028-8510"))
+Description: TrendCatcher is a versatile R package for identifying dynamic differentially expressed genes (DDEGs) in RNA-seq longitudinal studies. This is a workshop to show all the important functions of TrendCatcher R package.
+License: GPL (>= 2)
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.1.0
+RoxygenNote: 7.2.0
 Depends: 
-    Biobase
+    R (>= 4.0.3), DESeq2 (>= 1.28.1), RColorBrewer (>= 1.1.2),
+        plyr (>= 1.1.2), gss (>= 2.2.2), compiler (>= 4.0.3), stringr
+        (>= 1.4.0), RColorBrewer (>= 1.1.2), gridExtra (>= 2.3),
+        ggplot2 (>= 3.3.2), clusterProfiler (>= 3.16.1), org.Mm.eg.db
+        (>= 3.11.4), org.Hs.eg.db (>= 3.11.4), ggnewscale (>= 0.4.3),
+        enrichR (>= 2.1), foreach (>= 1.5.0), biomaRt (>= 2.44.4),
+        circlize (>= 0.4.10), ComplexHeatmap (>= 2.4.3), 
+        reshape2 (>= 1.4.4), pracma (>= 2.3.8)
 Suggests: 
     knitr,
     rmarkdown,
     pkgdown
-URL: https://seandavi.github.io/BuildABiocWorkshop/
+URL: https://jaleesr.github.io/BIOC2022_TrendCatcher/
 BugReports: https://github.com/seandavi/BuildABiocWorkshop/issues/new/choose
 VignetteBuilder: knitr
-DockerImage: ghcr.io/seandavi/buildabiocworkshop:latest
+DockerImage: ghcr.io/jaleesr/BIOC2022_TrendCatcher:latest
