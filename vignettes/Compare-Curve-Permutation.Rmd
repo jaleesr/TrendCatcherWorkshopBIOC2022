@@ -1,8 +1,10 @@
 ---
-title: "4.Compare DDEGs from same biological pathway but two different groups"
-output:
-  html_document: default
-  pdf_document: default
+title: "4.Compare a biological pathway temporal behavior between two groups"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{4.Compare a biological pathway temporal behavior between two groups}
+  %\VignetteEngine{knitr::rmarkdown}
+  \usepackage[utf8]{inputenc}
 ---
 
 #### 1. Load TrendCatcher R package.
@@ -11,7 +13,7 @@ output:
 library(TrendCatcher)
 ```
 
-#### 2. Now read the two demo master.list objects.
+#### 2. Now read the two demo master.list objects. since we want to compare the same biological pathway temporal behavior. We need to have two project TrendCatcher output: two master.list objects and one TimeHeatmap objects.
 
 ```{r}
 severe.path<-system.file("extdata", "MasterListSevere.rda", package = "TrendCatcher")
@@ -27,17 +29,23 @@ load(ht.path)
 head(ht.severe$GO.df)
 ```
 
-```{r, fig.height=10, fig.width=10}
-#### To compare DDEGs trajectories from a specific biological pathway
-### In this example, we show DDEGs from "neutrophil activation", one of the top enriched timeheatmap biological pathway from severe group
+#### 3. To compare DDEGs trajectories from a specific enriched biological pathway from two groups. In this example, we show DDEGs from "neutrophil activation", which is one of the top enriched timeheatmap biological pathway from severe group. We want to see these DDEGs trajector comparison from severe group and moderate group, since both groups record the temporal behavior of these genes.
 
+```{r}
+ht.severe$merge.df %>% filter(Description == "neutrophil activation")
+```
+
+To show the DDEGs from severe group which were enriched for neutrophil activation pathway, and how their temporal behavior differs between moderate and severe group. We applied LOESS smoothing curve fitting method.
+
+```{r, fig.height=10, fig.width=10}
 g<-draw_CurveComp(master.list.1 = master.list.severe, master.list.2 = master.list.moderate, ht.1 = ht.severe, pathway = "neutrophil activation",group.1.name = "severe", group.2.name = "moderate")
 print(g)
 
 ```
 
+To quantify which time interval these two group separate, we applied permutation test and marked the significant separation time in grey.
+
 ```{r, echo=TRUE, results='hide'}
-#### Permutation to check which time interval two curves are significantly seperated
 perm_output<-draw_CurveComp_Perm(master.list.1 = master.list.severe, 
                                  master.list.2 = master.list.moderate, 
                                  ht.1 = ht.severe, 
@@ -47,6 +55,10 @@ perm_output<-draw_CurveComp_Perm(master.list.1 = master.list.severe,
                                  n.perm = 100, 
                                  parall = FALSE, 
                                  pvalue.threshold = 0.05)
+```
+
+```{r}
+names(perm_output)
 ```
 
 ```{r,fig.height=10, fig.width=10}

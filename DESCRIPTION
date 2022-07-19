@@ -1,31 +1,52 @@
 Package: TrendCatcher
-Title: TrendCatcher Workshop BIOC2022
+Title: TrendCatcher: A Versitile R package for analyse longitudinal
+        RNA-seq study
 Version: 1.0.0
 Authors@R: 
     person(given = "Xinge",
            family = "Wang",
            role = c("aut", "cre"),
-           email = "xwang234@uic.edu",
-           comment = c(ORCID = "0000-0003-0028-8510"))
-Description: TrendCatcher is a versatile R package for identifying dynamic differentially expressed genes (DDEGs) in RNA-seq longitudinal studies. This is a workshop to show all the important functions of TrendCatcher R package.
-License: GPL (>= 2)
+           email = "xwang234@uic.edu")
+Description: Identify dynamic gene from longitudinal/time course RNA-seq dataset.
+License: Apache License (>= 2)
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.2.0
 Depends: 
-        DESeq2, 
-        clusterProfiler, 
-        org.Mm.eg.db, 
-        org.Hs.eg.db, 
-        biomaRt, 
-        ComplexHeatmap,
-        jaleesr/TrendCatcher
+     RColorBrewer,
+     plyr,
+     dplyr,
+     gss,
+     compiler, 
+     stringr, 
+     gridExtra,
+     ggplot2, 
+     ggnewscale,
+     enrichR, 
+     foreach,
+     circlize, 
+     doSNOW,
+     reshape2, 
+     pracma, 
+     nlme, 
+     MASS,
+     sva, 
+     ComplexHeatmap, 
+     DESeq2, 
+     Rcpp, 
+     clusterProfiler, 
+     edgeR,
+     org.Hs.eg.db, 
+     org.Mm.eg.db
 Suggests: 
     knitr,
     rmarkdown,
     pkgdown
-URL: https://jaleesr.github.io/BIOC2022_TrendCatcher/
-BugReports: https://github.com/seandavi/BuildABiocWorkshop/issues/new/choose
+URL: https://jaleesr.github.io/TrendCatcherWorkshopBIOC2022/
+BugReports: https://github.com/jaleesr/TrendCatcherWorkshopBIOC2022/issues/new/choose
 VignetteBuilder: knitr
-DockerImage: ghcr.io/jaleesr/BIOC2022_TrendCatcher:latest
+DockerImage: ghcr.io/jaleesr/TrendCatcherWorkshopBIOC2022:latest
+Imports: 
+    biomaRt,
+    scales
