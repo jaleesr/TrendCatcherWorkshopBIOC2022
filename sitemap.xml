@@ -1,30 +1,108 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://seandavi.github.io/BuildABiocWorkshop/404.html</loc>
+    <loc>https://jaleesr.github.io/BIOC2022_TrendCatcher/404.html</loc>
   </url>
   <url>
-    <loc>https://seandavi.github.io/BuildABiocWorkshop/LICENSE-text.html</loc>
+    <loc>https://jaleesr.github.io/BIOC2022_TrendCatcher/LICENSE-text.html</loc>
   </url>
   <url>
-    <loc>https://seandavi.github.io/BuildABiocWorkshop/LICENSE.html</loc>
+    <loc>https://jaleesr.github.io/BIOC2022_TrendCatcher/LICENSE.html</loc>
   </url>
   <url>
-    <loc>https://seandavi.github.io/BuildABiocWorkshop/articles/HOWTO_BUILD_WORKSHOP.html</loc>
+    <loc>https://jaleesr.github.io/BIOC2022_TrendCatcher/articles/Compare-Curve-Permutation.html</loc>
   </url>
   <url>
-    <loc>https://seandavi.github.io/BuildABiocWorkshop/articles/index.html</loc>
+    <loc>https://jaleesr.github.io/BIOC2022_TrendCatcher/articles/Gene-Trajectory-Analysis.html</loc>
   </url>
   <url>
-    <loc>https://seandavi.github.io/BuildABiocWorkshop/articles/workshop_example.html</loc>
+    <loc>https://jaleesr.github.io/BIOC2022_TrendCatcher/articles/Identify-Dynamic-Genes.html</loc>
   </url>
   <url>
-    <loc>https://seandavi.github.io/BuildABiocWorkshop/authors.html</loc>
+    <loc>https://jaleesr.github.io/BIOC2022_TrendCatcher/articles/Time-Heatmap-GO.html</loc>
   </url>
   <url>
-    <loc>https://seandavi.github.io/BuildABiocWorkshop/index.html</loc>
+    <loc>https://jaleesr.github.io/BIOC2022_TrendCatcher/articles/index.html</loc>
   </url>
   <url>
-    <loc>https://seandavi.github.io/BuildABiocWorkshop/reference/index.html</loc>
+    <loc>https://jaleesr.github.io/BIOC2022_TrendCatcher/authors.html</loc>
+  </url>
+  <url>
+    <loc>https://jaleesr.github.io/BIOC2022_TrendCatcher/index.html</loc>
+  </url>
+  <url>
+    <loc>https://jaleesr.github.io/BIOC2022_TrendCatcher/reference/Check_CountTable_Format.html</loc>
+  </url>
+  <url>
+    <loc>https://jaleesr.github.io/BIOC2022_TrendCatcher/reference/cal_p.html</loc>
+  </url>
+  <url>
+    <loc>https://jaleesr.github.io/BIOC2022_TrendCatcher/reference/cal_time_p_single_gene.html</loc>
+  </url>
+  <url>
+    <loc>https://jaleesr.github.io/BIOC2022_TrendCatcher/reference/combine_p_single_gene.html</loc>
+  </url>
+  <url>
+    <loc>https://jaleesr.github.io/BIOC2022_TrendCatcher/reference/curveFitting.new.html</loc>
+  </url>
+  <url>
+    <loc>https://jaleesr.github.io/BIOC2022_TrendCatcher/reference/draw_CurveComp.html</loc>
+  </url>
+  <url>
+    <loc>https://jaleesr.github.io/BIOC2022_TrendCatcher/reference/draw_CurveComp_Perm.html</loc>
+  </url>
+  <url>
+    <loc>https://jaleesr.github.io/BIOC2022_TrendCatcher/reference/draw_GOHeatmap.html</loc>
+  </url>
+  <url>
+    <loc>https://jaleesr.github.io/BIOC2022_TrendCatcher/reference/draw_GeneTraj.html</loc>
+  </url>
+  <url>
+    <loc>https://jaleesr.github.io/BIOC2022_TrendCatcher/reference/draw_TimeHeatmap_GO.html</loc>
+  </url>
+  <url>
+    <loc>https://jaleesr.github.io/BIOC2022_TrendCatcher/reference/draw_TimeHeatmap_enrichR.html</loc>
+  </url>
+  <url>
+    <loc>https://jaleesr.github.io/BIOC2022_TrendCatcher/reference/draw_TimeHeatmap_selGO.html</loc>
+  </url>
+  <url>
+    <loc>https://jaleesr.github.io/BIOC2022_TrendCatcher/reference/draw_TrajClusterGrid.html</loc>
+  </url>
+  <url>
+    <loc>https://jaleesr.github.io/BIOC2022_TrendCatcher/reference/draw_TrajClusterPie.html</loc>
+  </url>
+  <url>
+    <loc>https://jaleesr.github.io/BIOC2022_TrendCatcher/reference/fit_single_gene_const.html</loc>
+  </url>
+  <url>
+    <loc>https://jaleesr.github.io/BIOC2022_TrendCatcher/reference/fit_single_gene_spline.html</loc>
+  </url>
+  <url>
+    <loc>https://jaleesr.github.io/BIOC2022_TrendCatcher/reference/get_GeneEnsembl2Symbol.html</loc>
+  </url>
+  <url>
+    <loc>https://jaleesr.github.io/BIOC2022_TrendCatcher/reference/get_Symbol2GeneEnsembl.html</loc>
+  </url>
+  <url>
+    <loc>https://jaleesr.github.io/BIOC2022_TrendCatcher/reference/get_rep_array.html</loc>
+  </url>
+  <url>
+    <loc>https://jaleesr.github.io/BIOC2022_TrendCatcher/reference/get_time_array.html</loc>
+  </url>
+  <url>
+    <loc>https://jaleesr.github.io/BIOC2022_TrendCatcher/reference/index.html</loc>
+  </url>
+  <url>
+    <loc>https://jaleesr.github.io/BIOC2022_TrendCatcher/reference/permutation.new.html</loc>
+  </url>
+  <url>
+    <loc>https://jaleesr.github.io/BIOC2022_TrendCatcher/reference/preprocess_TrendCatcher.html</loc>
+  </url>
+  <url>
+    <loc>https://jaleesr.github.io/BIOC2022_TrendCatcher/reference/run_TrendCatcher.html</loc>
+  </url>
+  <url>
+    <loc>https://jaleesr.github.io/BIOC2022_TrendCatcher/reference/transform_single_gene_df.html</loc>
   </url>
 </urlset>
