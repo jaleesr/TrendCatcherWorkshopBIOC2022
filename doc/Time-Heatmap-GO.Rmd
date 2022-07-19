@@ -1,0 +1,130 @@
+---
+title: "3. Generate TimeHeatmap"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{3. Generate TimeHeatmap}
+  %\VignetteEngine{knitr::rmarkdown}
+  \usepackage[utf8]{inputenc}
+---
+
+#### 1. Load TrendCatcher R package.
+
+```{r, results='hide', message=FALSE}
+library(TrendCatcher)
+```
+
+#### 2. Now read the demo master.list.
+
+```{r}
+demo.master.list.path<-system.file("extdata", "BrainMasterList_Symbol.rda", package = "TrendCatcher")
+load(demo.master.list.path)
+```
+
+#### 3. Use GO enrichment analysis to construct TimeHeatmap
+
+To draw TimeHeatmap using GO database, please use draw_TimeHeatmap_GO function. This function will return a list composed of a TimeHeatmap plot and a merge.df dataframe. Due to the limited size of TimeHeatmap for visualization, users can play with merge.df which includes all the GO enrichment analysis for each time window. 
+
+```{r, echo=FALSE, fig.height=15, fig.width=15}
+#time_heatmap<-draw_TimeHeatmap_GO(master.list = master.list, logFC.thres = 0, top.n = 10, dyn.gene.p.thres = 0.05, keyType = "SYMBOL", OrgDb = "org.Mm.eg.db", ont = "BP", term.width = 80, GO.enrich.p = 0.05, figure.title = "TimeHeatmap")  
+
+```
+
+You can also load the demo TimeHeatmap object to see the what elements it contains. It has 3 elements, a ComplexHeatmap object time.heatmap, a data.frame merge.df and a data.frame GO.df. 
+
+```{r}
+# To save time, directely load from extdata
+demo.time.heatmap.path<-system.file("extdata", "Brain_TimeHeatmap.rda", package = "TrendCatcher")
+load(demo.time.heatmap.path)
+names(time_heatmap)
+```
+
+
+Print out TimeHeatmap from the time_heatmap list object. 
+```{r, fig.width=9, fig.height=10}
+require("ComplexHeatmap")
+print(time_heatmap$time.heatmap)
+```
+
+Check all the enriched GO terms. 
+
+```{r}
+head(time_heatmap$merge.df[,1:5])
+```
+
+Check top enriched GO terms average log2FC within each time window. 
+```{r}
+head(time_heatmap$GO.df[,1:5])
+```
+
+#### 4. TimeHeatmap with non-redundant GO terms.
+
+Sometimes GO terms are redundant, users can select manually non-redundant GOs using function below.
+
+```{r, fig.width=8, fig.height=5}
+go.terms<-unique(time_heatmap$GO.df$Description)[1:5]
+time_heatmap_selGO<-draw_TimeHeatmap_selGO(time_heatmap = time_heatmap, sel.go = go.terms, master.list = master.list, GO.perc.thres = 0, nDDEG.thres = 0, save.tiff.path = NA)
+```
+
+#### 5. Look at Genes candidates from picked enriched GO terms.
+
+To look at which genes are involved within the TimeHeatmap above. We can call draw_GOHeatmap function. 
+This function is useful when one is comparing multiple projects. 
+
+```{r, fig.height=10, fig.width=7}
+go.terms<-c("response to lipopolysaccharide",
+            "response to interferon-beta",
+            "cytokine-mediated signaling pathway",
+            "response to interferon-gamma",
+            "response to virus",
+            "leukocyte migration",
+            "mitotic nuclear division",
+            "regulation of vasculature development",
+            "extracellular structure organization",
+            "regulation of epithelial cell proliferation")
+gene.GO.df<-draw_GOHeatmap(master.list = master.list, time.window = "0h-6h", 
+                           go.terms = go.terms,  merge.df = time_heatmap$merge.df, 
+                           logFC.thres = 5)
+```
+
+The data.frame gene.GO.df contains all the genes we found through TrendCatcher without logFC threshold.
+
+- type, activation pathway or deactivation pathway.
+- Description, GO term.
+- gene, gene symbol or gene ensembl.
+- logFC.prev.bk, logFC compared to previous break point.
+- prev.bk.t, previous break point time.
+- Symbol, gene symbol.
+- description, gene description.
+
+
+```{r}
+head(gene.GO.df$GOheatmapDat)
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
