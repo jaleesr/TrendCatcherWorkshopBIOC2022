@@ -40,7 +40,7 @@ For the output of TrendCatcher, there are mainly 2 components: a master table an
 A TrendCatcher docker image that contains the installed TrendCatcher R packages and all its dependencies was generated using [BuildAbiocWorkshop](https://github.com/seandavi/BuildABiocWorkshop). Please install it using the following command, 
 
 ```sh
-docker run -e PASSWORD=abc -p 8787:8787 http://ghcr.io/jaleesr/trendcatcherworkshopbioc2022
+docker run -e PASSWORD=abc -p 8787:8787 ghcr.io/jaleesr/trendcatcherworkshopbioc2022
 ```
 ## Use install_github()
 
